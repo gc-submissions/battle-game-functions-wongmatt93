@@ -43,43 +43,31 @@ function fight(player1, player2, player1Health, player2Health) {
 fight("Mitch", "Chris", "100", "100");
 
 const getGrade = (number) => {
-  if (number >= 90) {
-    return "A";
-  } else if (number >= 80) {
-    return "B";
-  } else if (number >= 70) {
-    return "C";
-  } else if (number >= 60) {
-    return "D";
-  } else if (number < 60) {
-    return "F";
-  }
+  return number >= 90
+    ? "A"
+    : number >= 80
+    ? "B"
+    : number >= 70
+    ? "C"
+    : number >= 60
+    ? "D"
+    : "F";
 };
 
 console.log(getGrade(49));
 
 const prioritize = (urgent, important) => {
-  if (urgent && important) {
-    return 1;
-  } else if (important) {
-    return 2;
-  } else if (urgent) {
-    return 3;
-  } else {
-    return 4;
-  }
+  return urgent && important ? 1 : important ? 2 : urgent ? 3 : 4;
 };
 
-console.log(prioritize(false, true));
+console.log(prioritize(false, false));
 
 const calculatePay = (hours, wages) => {
-  if (hours <= 40 && hours > 0) {
-    return hours * wages;
-  } else if (hours > 40) {
-    return 40 * wages + (hours - 40) * wages * 1.5;
-  } else {
-    return "Did you even work?";
-  }
+  return hours <= 40 && hours > 0
+    ? hours * wages
+    : hours > 40
+    ? 40 * wages + (hours - 40) * wages * 1.5
+    : "Did you even work?";
 };
 
 console.log(calculatePay(60, 12));
