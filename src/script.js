@@ -4,7 +4,7 @@
 const randomDamage = () => Math.floor(Math.random() * 10) + 1;
 
 const chooseOption = (opt1, opt2) => {
-  let randNum = Math.round(Math.random());
+  let randNum = Math.floor(Math.random() * 2);
   return randNum == 0 ? opt1 : opt2;
 };
 
